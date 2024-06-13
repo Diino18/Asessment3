@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Galeri Sepatu</string>
+    <string name="gambar">Gambar %1$s</string>
+    <string name="error">Gagal Memuat data.. Koneksi error.</string>
+    <string name="try_again">Coba Lagi</string>
+    <string name="profil">Profil</string>
+    <string name="tutup">Tutup</string>
+    <string name="logout">Logout</string>
+    <string name="tambah_sepatu">Tambah Sepatu</string>
+    <string name="nama">Merek Sepatu</string>
+    <string name="ukuran_sepatu">Ukuran Sepatu</string>
+    <string name="batal">Batal</string>
+    <string name="simpan">Simpan</string>
+    <string name="hapus">Hapus</string>
+    <string name="grid">Grid</string>
+    <string name="list">List</string>
+</resources>
