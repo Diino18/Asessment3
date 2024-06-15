@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Galery Shoes</string>
+    <string name="gambar">Image%1$s</string>
+    <string name="error">Failed to load data. Connection error.</string>
+    <string name="try_again">Try Again</string>
+    <string name="profil">Profile</string>
+    <string name="tutup">Close</string>
+    <string name="logout">Logout</string>
+    <string name="tambah_sepatu">Add Shoes</string>
+    <string name="merk_Sepatu">Shoe Brand</string>
+    <string name="ukuran_sepatu">Shoe Size</string>
+    <string name="batal">Cancel</string>
+    <string name="simpan">Save</string>
+    <string name="hapus">Delete</string>
+    <string name="grid">Grid</string>
+    <string name="list">List</string>
+</resources>

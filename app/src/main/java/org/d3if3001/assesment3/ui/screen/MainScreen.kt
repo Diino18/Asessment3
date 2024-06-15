@@ -80,7 +80,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.d3if3001.assesment3.BuildConfig
 import org.d3if3001.assesment3.R
-import org.d3if3001.assesment3.model.Hewan
+import org.d3if3001.assesment3.model.Sepatu
 import org.d3if3001.assesment3.model.User
 import org.d3if3001.assesment3.network.ApiStatus
 import org.d3if3001.assesment3.network.HewanApi
@@ -183,7 +183,7 @@ fun MainScreen(){
             }
         }
         if (showHewanDialog){
-            HewanDialog(
+            SepatuDialog(
                 bitmap = bitmap,
                 onDismissRequest = { showHewanDialog = false }
             ){
@@ -226,7 +226,7 @@ fun ScreenContent(viewModel: MainViewModel, userId: String, modifier : Modifier)
                     columns = GridCells.Fixed(2),
                     contentPadding = PaddingValues(bottom = 80.dp)
                 ){
-                    items(data) { GridItem(hewan = it, userId)}
+                    items(data) { GridItem(sepatu = it, userId)}
                 }
             } else {
                 LazyColumn(
@@ -258,7 +258,7 @@ fun ScreenContent(viewModel: MainViewModel, userId: String, modifier : Modifier)
 }
 
 @Composable
-fun ListItem(sepatu: Hewan, userId: String){
+fun ListItem(sepatu: Sepatu, userId: String){
     var showDialogDelete by remember {
         mutableStateOf(false)
     }
@@ -327,7 +327,7 @@ fun ListItem(sepatu: Hewan, userId: String){
 
 
 @Composable
-fun GridItem(hewan: Hewan, userId: String){
+fun GridItem(sepatu: Sepatu, userId: String){
     var showDialogDelete by remember {
         mutableStateOf(false)
     }
@@ -341,10 +341,10 @@ fun GridItem(hewan: Hewan, userId: String){
     ){
         AsyncImage(
             model =ImageRequest.Builder(LocalContext.current)
-                .data(HewanApi.getHewanUrl(hewan.imageId))
+                .data(HewanApi.getHewanUrl(sepatu.imageId))
                 .crossfade(true)
                 .build(),
-            contentDescription = stringResource(R.string.gambar, hewan.namaSepatu),
+            contentDescription = stringResource(R.string.gambar, sepatu.namaSepatu),
             contentScale = ContentScale.Crop,
             placeholder = painterResource(id = R.drawable.loading_img),
             error = painterResource(id = R.drawable.baseline_broken_image_24),
@@ -366,12 +366,12 @@ fun GridItem(hewan: Hewan, userId: String){
             ){
                 Column {
                     Text(
-                        text = hewan.namaSepatu,
+                        text = sepatu.namaSepatu,
                         fontWeight = FontWeight.Bold,
                         color = Color.White
                     )
                     Text(
-                        text = hewan.ukuranSepatu,
+                        text = sepatu.ukuranSepatu,
                         fontStyle = FontStyle.Italic,
                         fontSize = 14.sp,
                         color = Color.White
@@ -385,7 +385,7 @@ fun GridItem(hewan: Hewan, userId: String){
                         if (showDialogDelete){
                             DeleteDialog(
                                 onDismissRequest = { showDialogDelete = false}) {
-                                CoroutineScope(Dispatchers.IO).launch { viewModel.deleteImage(userId, hewan.id) }
+                                CoroutineScope(Dispatchers.IO).launch { viewModel.deleteImage(userId, sepatu.id) }
                             }
                         }
                     }

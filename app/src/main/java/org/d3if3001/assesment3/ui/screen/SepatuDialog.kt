@@ -30,15 +30,15 @@ import androidx.compose.ui.window.Dialog
 import org.d3if3001.assesment3.R
 
 @Composable
-fun HewanDialog(
+fun SepatuDialog(
     bitmap: Bitmap?,
     onDismissRequest: () -> Unit,
     onConfirmation: (String, String) -> Unit
 ){
-    var nama by remember {
+    var merkSepatu by remember {
         mutableStateOf("")
     }
-    var namaLatin by remember {
+    var sizeSepatu by remember {
         mutableStateOf("")
     }
     Dialog(onDismissRequest = { onDismissRequest() }) {
@@ -58,9 +58,9 @@ fun HewanDialog(
                         .aspectRatio(1f)
                 )
                 OutlinedTextField(
-                    value = nama,
-                    onValueChange = { nama = it },
-                    label = { Text(text = stringResource(id = R.string.nama))},
+                    value = merkSepatu,
+                    onValueChange = { merkSepatu = it },
+                    label = { Text(text = stringResource(id = R.string.merk_Sepatu))},
                     maxLines = 1,
                     keyboardOptions = KeyboardOptions(
                         capitalization = KeyboardCapitalization.Words,
@@ -69,8 +69,8 @@ fun HewanDialog(
                     modifier = Modifier.padding(top = 8.dp)
                 )
                 OutlinedTextField(
-                    value = namaLatin,
-                    onValueChange = { namaLatin = it },
+                    value = sizeSepatu,
+                    onValueChange = { sizeSepatu = it },
                     label = { Text(text = stringResource(id = R.string.ukuran_sepatu))},
                     maxLines = 1,
                     keyboardOptions = KeyboardOptions(
@@ -92,8 +92,8 @@ fun HewanDialog(
                         Text(text = stringResource(id = R.string.batal))
                     }
                     OutlinedButton(
-                        onClick = { onConfirmation(nama, namaLatin) },
-                        enabled = nama.isNotEmpty() && namaLatin.isNotEmpty(),
+                        onClick = { onConfirmation(merkSepatu, sizeSepatu) },
+                        enabled = merkSepatu.isNotEmpty() && sizeSepatu.isNotEmpty(),
                         modifier = Modifier.padding(8.dp)
                     ) {
                         Text(text = stringResource(id = R.string.simpan))

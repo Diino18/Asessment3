@@ -11,13 +11,13 @@ import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.toRequestBody
-import org.d3if3001.assesment3.model.Hewan
+import org.d3if3001.assesment3.model.Sepatu
 import org.d3if3001.assesment3.network.ApiStatus
 import org.d3if3001.assesment3.network.HewanApi
 import java.io.ByteArrayOutputStream
 
 class MainViewModel : ViewModel() {
-    var data = mutableStateOf(emptyList<Hewan>())
+    var data = mutableStateOf(emptyList<Sepatu>())
         private set
     var status = MutableStateFlow(ApiStatus.LOADING)
         private  set

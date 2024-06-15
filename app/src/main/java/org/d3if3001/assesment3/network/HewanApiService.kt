@@ -4,7 +4,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import org.d3if3001.assesment3.model.Hewan
+import org.d3if3001.assesment3.model.Sepatu
 import org.d3if3001.assesment3.model.OpStatus
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -31,7 +31,7 @@ interface HewanApiService {
     @GET("sepatu.php")
     suspend fun getHewan(
         @Header("Authorization") userId: String
-    ):List<Hewan>
+    ):List<Sepatu>
 
     @Multipart
     @POST("sepatu.php")
